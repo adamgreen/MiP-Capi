@@ -79,99 +79,99 @@ void robotMain(void)
 
 ===API by Function
 |= Function         |= API                                                                                                                                  |
-| Initialization    | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipinit | mipInit]]                                                  |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipuninit | mipUninit]]                                              |
-| Connection        | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipconnecttorobot | mipConnectToRobot]]                              |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipdisconnectfromrobot | mipDisconnectFromRobot]]                    |
-| Discovery         | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipstartrobotdiscovery | mipStartRobotDiscovery]]                    |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetdiscoveredrobotcount | mipGetDiscoveredRobotCount]]            |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetdiscoveredrobotname | mipGetDiscoveredRobotName]]              |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipstoprobotdiscovery | mipStopRobotDiscovery]]                      |
-| Modes             | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipsetgestureradarmode | mipSetGestureRadarMode]]                    |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetgestureradarmode | mipGetGestureRadarMode]]                    |
-| LEDs              | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipsetchestled | mipSetChestLED]]                                    |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipflashchestled | mipFlashChestLED]]                                |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetchestled | mipGetChestLED]]                                    |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipsetheadleds | mipSetHeadLEDs]]                                    |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetheadleds | mipGetHeadLEDs]]                                    |
-| Motion            | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipcontinuousdrive | mipContinuousDrive]]                            |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipdistancedrive | mipDistanceDrive]]                                |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipturnleft | mipTurnLeft]]                                          |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipturnright | mipTurnRight]]                                        |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipdriveforward | mipDriveForward]]                                  |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipdrivebackward | mipDriveBackward]]                                |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipstop | mipStop]]                                                  |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipfalldown | mipFallDown]]                                          |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetup | mipGetUp]]                                                |
-| Sound             | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipplaysound | mipPlaySound]]                                        |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetvolume | mipGetVolume]]                                        |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipsetvolume | mipSetVolume]]                                        |
-| Odometer          | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipreadodometer | mipReadOdometer]]                                  |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipresetodometer | mipResetOdometer]]                                |
-| Status            | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetstatus | mipGetStatus]]                                        |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetlateststatusnotification | mipGetLatestStatusNotification]]    |
-| Radar             | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetlatestradarnotification | mipGetLatestRadarNotification]]      |
-| Gesture           | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetlatestgesturenotification | mipGetLatestGestureNotification]]  |
-| Shake             | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetlatestshakenotification | mipGetLatestShakeNotification]]      |
-| Weight            | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetweight | mipGetWeight]]                                        |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetlatestweightnotification | mipGetLatestWeightNotification]]    |
-| Clap              | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetclapsettings | mipGetClapSettings]]                            |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipenableclap | mipEnableClap]]                                      |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipsetclapdelay | mipSetClapDelay]]                                  |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetlatestclapnotification | mipGetLatestClapNotification]]        |
-| Version Info      | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetsoftwareversion | mipGetSoftwareVersion]]                      |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgethardwareinfo | mipGetHardwareInfo]]                            |
-| Raw               | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#miprawsend | mipRawSend]]                                            |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#miprawreceive | mipRawReceive]]                                      |
-|                   | [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#miprawreceivenotification | mipRawReceiveNotification]]              |
+| Initialization    | [[https://github.com/adamgreen/MiP-Capi#mipinit | mipInit]]                                                  |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipuninit | mipUninit]]                                              |
+| Connection        | [[https://github.com/adamgreen/MiP-Capi#mipconnecttorobot | mipConnectToRobot]]                              |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipdisconnectfromrobot | mipDisconnectFromRobot]]                    |
+| Discovery         | [[https://github.com/adamgreen/MiP-Capi#mipstartrobotdiscovery | mipStartRobotDiscovery]]                    |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipgetdiscoveredrobotcount | mipGetDiscoveredRobotCount]]            |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipgetdiscoveredrobotname | mipGetDiscoveredRobotName]]              |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipstoprobotdiscovery | mipStopRobotDiscovery]]                      |
+| Modes             | [[https://github.com/adamgreen/MiP-Capi#mipsetgestureradarmode | mipSetGestureRadarMode]]                    |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipgetgestureradarmode | mipGetGestureRadarMode]]                    |
+| LEDs              | [[https://github.com/adamgreen/MiP-Capi#mipsetchestled | mipSetChestLED]]                                    |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipflashchestled | mipFlashChestLED]]                                |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipgetchestled | mipGetChestLED]]                                    |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipsetheadleds | mipSetHeadLEDs]]                                    |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipgetheadleds | mipGetHeadLEDs]]                                    |
+| Motion            | [[https://github.com/adamgreen/MiP-Capi#mipcontinuousdrive | mipContinuousDrive]]                            |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipdistancedrive | mipDistanceDrive]]                                |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipturnleft | mipTurnLeft]]                                          |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipturnright | mipTurnRight]]                                        |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipdriveforward | mipDriveForward]]                                  |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipdrivebackward | mipDriveBackward]]                                |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipstop | mipStop]]                                                  |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipfalldown | mipFallDown]]                                          |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipgetup | mipGetUp]]                                                |
+| Sound             | [[https://github.com/adamgreen/MiP-Capi#mipplaysound | mipPlaySound]]                                        |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipgetvolume | mipGetVolume]]                                        |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipsetvolume | mipSetVolume]]                                        |
+| Odometer          | [[https://github.com/adamgreen/MiP-Capi#mipreadodometer | mipReadOdometer]]                                  |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipresetodometer | mipResetOdometer]]                                |
+| Status            | [[https://github.com/adamgreen/MiP-Capi#mipgetstatus | mipGetStatus]]                                        |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipgetlateststatusnotification | mipGetLatestStatusNotification]]    |
+| Radar             | [[https://github.com/adamgreen/MiP-Capi#mipgetlatestradarnotification | mipGetLatestRadarNotification]]      |
+| Gesture           | [[https://github.com/adamgreen/MiP-Capi#mipgetlatestgesturenotification | mipGetLatestGestureNotification]]  |
+| Shake             | [[https://github.com/adamgreen/MiP-Capi#mipgetlatestshakenotification | mipGetLatestShakeNotification]]      |
+| Weight            | [[https://github.com/adamgreen/MiP-Capi#mipgetweight | mipGetWeight]]                                        |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipgetlatestweightnotification | mipGetLatestWeightNotification]]    |
+| Clap              | [[https://github.com/adamgreen/MiP-Capi#mipgetclapsettings | mipGetClapSettings]]                            |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipenableclap | mipEnableClap]]                                      |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipsetclapdelay | mipSetClapDelay]]                                  |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipgetlatestclapnotification | mipGetLatestClapNotification]]        |
+| Version Info      | [[https://github.com/adamgreen/MiP-Capi#mipgetsoftwareversion | mipGetSoftwareVersion]]                      |
+|                   | [[https://github.com/adamgreen/MiP-Capi#mipgethardwareinfo | mipGetHardwareInfo]]                            |
+| Raw               | [[https://github.com/adamgreen/MiP-Capi#miprawsend | mipRawSend]]                                            |
+|                   | [[https://github.com/adamgreen/MiP-Capi#miprawreceive | mipRawReceive]]                                      |
+|                   | [[https://github.com/adamgreen/MiP-Capi#miprawreceivenotification | mipRawReceiveNotification]]              |
 
 
 ===API by Name
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipconnecttorobot | mipConnectToRobot]]                              |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipcontinuousdrive | mipContinuousDrive]]                            |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipdisconnectfromrobot | mipDisconnectFromRobot]]                    |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipdistancedrive | mipDistanceDrive]]                                |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipdrivebackward | mipDriveBackward]]                                |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipdriveforward | mipDriveForward]]                                  |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipenableclap | mipEnableClap]]                                      |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipfalldown | mipFallDown]]                                          |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipflashchestled | mipFlashChestLED]]                                |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetchestled | mipGetChestLED]]                                    |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetclapsettings | mipGetClapSettings]]                            |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetdiscoveredrobotcount | mipGetDiscoveredRobotCount]]            |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetdiscoveredrobotname | mipGetDiscoveredRobotName]]              |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetgestureradarmode | mipGetGestureRadarMode]]                    |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgethardwareinfo | mipGetHardwareInfo]]                            |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetheadleds | mipGetHeadLEDs]]                                    |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetlatestclapnotification | mipGetLatestClapNotification]]        |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetlatestgesturenotification | mipGetLatestGestureNotification]]  |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetlatestradarnotification | mipGetLatestRadarNotification]]      |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetlatestshakenotification | mipGetLatestShakeNotification]]      |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetlateststatusnotification | mipGetLatestStatusNotification]]    |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetlatestweightnotification | mipGetLatestWeightNotification]]    |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetsoftwareversion | mipGetSoftwareVersion]]                      |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetstatus | mipGetStatus]]                                        |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetup | mipGetUp]]                                                |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetvolume | mipGetVolume]]                                        |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipgetweight | mipGetWeight]]                                        |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipinit | mipInit]]                                                  |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipplaysound | mipPlaySound]]                                        |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#miprawreceive | mipRawReceive]]                                      |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#miprawreceivenotification | mipRawReceiveNotification]]              |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#miprawsend | mipRawSend]]                                            |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipreadodometer | mipReadOdometer]]                                  |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipresetodometer | mipResetOdometer]]                                |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipsetchestled | mipSetChestLED]]                                    |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipsetclapdelay | mipSetClapDelay]]                                  |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipsetgestureradarmode | mipSetGestureRadarMode]]                    |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipsetheadleds | mipSetHeadLEDs]]                                    |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipsetvolume | mipSetVolume]]                                        |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipstartrobotdiscovery | mipStartRobotDiscovery]]                    |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipstop | mipStop]]                                                  |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipstoprobotdiscovery | mipStopRobotDiscovery]]                      |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipturnleft | mipTurnLeft]]                                          |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipturnright | mipTurnRight]]                                        |
-| [[https://github.com/adamgreen/MiP/tree/master/OSX_ConsoleSample#mipuninit | mipUninit]]                                              |
+| [[https://github.com/adamgreen/MiP-Capi#mipconnecttorobot | mipConnectToRobot]]                              |
+| [[https://github.com/adamgreen/MiP-Capi#mipcontinuousdrive | mipContinuousDrive]]                            |
+| [[https://github.com/adamgreen/MiP-Capi#mipdisconnectfromrobot | mipDisconnectFromRobot]]                    |
+| [[https://github.com/adamgreen/MiP-Capi#mipdistancedrive | mipDistanceDrive]]                                |
+| [[https://github.com/adamgreen/MiP-Capi#mipdrivebackward | mipDriveBackward]]                                |
+| [[https://github.com/adamgreen/MiP-Capi#mipdriveforward | mipDriveForward]]                                  |
+| [[https://github.com/adamgreen/MiP-Capi#mipenableclap | mipEnableClap]]                                      |
+| [[https://github.com/adamgreen/MiP-Capi#mipfalldown | mipFallDown]]                                          |
+| [[https://github.com/adamgreen/MiP-Capi#mipflashchestled | mipFlashChestLED]]                                |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetchestled | mipGetChestLED]]                                    |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetclapsettings | mipGetClapSettings]]                            |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetdiscoveredrobotcount | mipGetDiscoveredRobotCount]]            |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetdiscoveredrobotname | mipGetDiscoveredRobotName]]              |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetgestureradarmode | mipGetGestureRadarMode]]                    |
+| [[https://github.com/adamgreen/MiP-Capi#mipgethardwareinfo | mipGetHardwareInfo]]                            |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetheadleds | mipGetHeadLEDs]]                                    |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetlatestclapnotification | mipGetLatestClapNotification]]        |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetlatestgesturenotification | mipGetLatestGestureNotification]]  |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetlatestradarnotification | mipGetLatestRadarNotification]]      |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetlatestshakenotification | mipGetLatestShakeNotification]]      |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetlateststatusnotification | mipGetLatestStatusNotification]]    |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetlatestweightnotification | mipGetLatestWeightNotification]]    |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetsoftwareversion | mipGetSoftwareVersion]]                      |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetstatus | mipGetStatus]]                                        |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetup | mipGetUp]]                                                |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetvolume | mipGetVolume]]                                        |
+| [[https://github.com/adamgreen/MiP-Capi#mipgetweight | mipGetWeight]]                                        |
+| [[https://github.com/adamgreen/MiP-Capi#mipinit | mipInit]]                                                  |
+| [[https://github.com/adamgreen/MiP-Capi#mipplaysound | mipPlaySound]]                                        |
+| [[https://github.com/adamgreen/MiP-Capi#miprawreceive | mipRawReceive]]                                      |
+| [[https://github.com/adamgreen/MiP-Capi#miprawreceivenotification | mipRawReceiveNotification]]              |
+| [[https://github.com/adamgreen/MiP-Capi#miprawsend | mipRawSend]]                                            |
+| [[https://github.com/adamgreen/MiP-Capi#mipreadodometer | mipReadOdometer]]                                  |
+| [[https://github.com/adamgreen/MiP-Capi#mipresetodometer | mipResetOdometer]]                                |
+| [[https://github.com/adamgreen/MiP-Capi#mipsetchestled | mipSetChestLED]]                                    |
+| [[https://github.com/adamgreen/MiP-Capi#mipsetclapdelay | mipSetClapDelay]]                                  |
+| [[https://github.com/adamgreen/MiP-Capi#mipsetgestureradarmode | mipSetGestureRadarMode]]                    |
+| [[https://github.com/adamgreen/MiP-Capi#mipsetheadleds | mipSetHeadLEDs]]                                    |
+| [[https://github.com/adamgreen/MiP-Capi#mipsetvolume | mipSetVolume]]                                        |
+| [[https://github.com/adamgreen/MiP-Capi#mipstartrobotdiscovery | mipStartRobotDiscovery]]                    |
+| [[https://github.com/adamgreen/MiP-Capi#mipstop | mipStop]]                                                  |
+| [[https://github.com/adamgreen/MiP-Capi#mipstoprobotdiscovery | mipStopRobotDiscovery]]                      |
+| [[https://github.com/adamgreen/MiP-Capi#mipturnleft | mipTurnLeft]]                                          |
+| [[https://github.com/adamgreen/MiP-Capi#mipturnright | mipTurnRight]]                                        |
+| [[https://github.com/adamgreen/MiP-Capi#mipuninit | mipUninit]]                                              |
 
 
 ===mipInit
