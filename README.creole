@@ -228,7 +228,7 @@ void robotMain(void)
     int result = -1;
     MiP* pMiP = mipInit(NULL);
 
-    printf("\tExample - Connect and disconnect from default MiP.\n"
+    printf("\tConnect.c - Connect and disconnect from default MiP.\n"
            "\tShould see chest LED turn green on successful connection and\n"
            "\tswitch back to blue shortly after once disconnected.\n");
 
@@ -268,7 +268,7 @@ void robotMain(void)
     int result = -1;
     MiP* pMiP = mipInit(NULL);
 
-    printf("\tExample - Connect and disconnect from default MiP.\n"
+    printf("\tConnect.c - Connect and disconnect from default MiP.\n"
            "\tShould see chest LED turn green on successful connection and\n"
            "\tswitch back to blue shortly after once disconnected.\n");
 
@@ -312,7 +312,7 @@ void robotMain(void)
     const char* pRobotName = NULL;
     MiP*        pMiP = mipInit(NULL);
 
-    printf("\tExample - Discover MiP robots to which a connection can be made.\n"
+    printf("\tDiscovery.c - Discover MiP robots to which a connection can be made.\n"
            "\tShould see first MiP robot be listed when it is powered up near\n"
            "\tthe test machine.\n");
     result = mipStartRobotDiscovery(pMiP);
@@ -357,7 +357,7 @@ void robotMain(void)
     const char* pRobotName = NULL;
     MiP*        pMiP = mipInit(NULL);
 
-    printf("\tExample - Discover MiP robots to which a connection can be made.\n"
+    printf("\tDiscovery.c - Discover MiP robots to which a connection can be made.\n"
            "\tShould see first MiP robot be listed when it is powered up near\n"
            "\tthe test machine.\n");
     result = mipStartRobotDiscovery(pMiP);
@@ -404,7 +404,7 @@ void robotMain(void)
     const char* pRobotName = NULL;
     MiP*        pMiP = mipInit(NULL);
 
-    printf("\tExample - Discover MiP robots to which a connection can be made.\n"
+    printf("\tDiscovery.c - Discover MiP robots to which a connection can be made.\n"
            "\tShould see first MiP robot be listed when it is powered up near\n"
            "\tthe test machine.\n");
     result = mipStartRobotDiscovery(pMiP);
@@ -448,7 +448,7 @@ void robotMain(void)
     const char* pRobotName = NULL;
     MiP*        pMiP = mipInit(NULL);
 
-    printf("\tExample - Discover MiP robots to which a connection can be made.\n"
+    printf("\tDiscovery.c - Discover MiP robots to which a connection can be made.\n"
            "\tShould see first MiP robot be listed when it is powered up near\n"
            "\tthe test machine.\n");
     result = mipStartRobotDiscovery(pMiP);
@@ -494,7 +494,7 @@ void robotMain(void)
     MiPGestureRadarMode  mode = MIP_GESTURE_RADAR_DISABLED;
     MiP*                 pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipSet/GetGestureRadarMode() functions.\n"
+    printf("\tGestureRadarMode.c - Use mipSet/GetGestureRadarMode() functions.\n"
            "\tShould switch into radar mode.\n");
 
     // Connect to first MiP robot discovered.
@@ -538,7 +538,7 @@ void robotMain(void)
     MiPGestureRadarMode  mode = MIP_GESTURE_RADAR_DISABLED;
     MiP*                 pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipSet/GetGestureRadarMode() functions.\n"
+    printf("\tGestureRadarMode.c - Use mipSet/GetGestureRadarMode() functions.\n"
            "\tShould switch into radar mode.\n");
 
     // Connect to first MiP robot discovered.
@@ -582,7 +582,7 @@ void robotMain(void)
     const uint8_t green = 0x00;
     const uint8_t blue = 0xff;
 
-    printf("\tExample - Use setChestLED function.\n"
+    printf("\tSetChestLED.c - Use mipSetChestLED() function.\n"
            "\tShould switch chest LED to magenta.\n");
 
     // Connect to first MiP robot discovered.
@@ -631,7 +631,7 @@ void robotMain(void)
     MiPChestLED    chestLED;
     MiP*           pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipFlashChestLED() and mipGetChestLED() functions.\n"
+    printf("\tFlashChestLED.c - Use mipFlashChestLED() and mipGetChestLED() functions.\n"
            "\tShould flash chest LED red.\n");
 
     // Connect to first MiP robot discovered.
@@ -687,7 +687,7 @@ void robotMain(void)
     MiPChestLED    chestLED;
     MiP*           pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipFlashChestLED() and mipGetChestLED() functions.\n"
+    printf("\tFlashChestLED.c - Use mipFlashChestLED() and mipGetChestLED() functions.\n"
            "\tShould flash chest LED red.\n");
 
     // Connect to first MiP robot discovered.
@@ -740,7 +740,7 @@ void robotMain(void)
     MiPHeadLEDs headLEDs;
     MiP*        pMiP = mipInit(NULL);
 
-    printf("\tExample - Use head LED functions.\n"
+    printf("\tHeadLEDs.c - Use head LED functions.\n"
            "\tShould set each head LED to different state.\n");
 
     // Connect to first MiP robot discovered.
@@ -806,7 +806,7 @@ void robotMain(void)
     MiPHeadLEDs headLEDs;
     MiP*        pMiP = mipInit(NULL);
 
-    printf("\tExample - Use head LED functions.\n"
+    printf("\tHeadLEDs.c - Use head LED functions.\n"
            "\tShould set each head LED to different state.\n");
 
     // Connect to first MiP robot discovered.
@@ -880,7 +880,7 @@ void robotMain(void)
     int   i = 0;
     MiP*  pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipContinuousDrive() function.\n"
+    printf("\tContinuousDrive.c - Use mipContinuousDrive() function.\n"
            "\tDrive forward with right turn and then backward with left turn.\n");
 
     // Connect to first MiP robot discovered.
@@ -939,7 +939,7 @@ void robotMain(void)
     int                result = -1;
     MiP*               pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipDistanceDrive function.\n"
+    printf("\tDistanceDrive.c - Use mipDistanceDrive function.\n"
            "\tDrive forward, turn 360 degrees in each direction and backward.\n");
 
     // Connect to first MiP robot discovered.
@@ -982,7 +982,7 @@ void robotMain(void)
     int   result = -1;
     MiP*  pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipTurnLeft & mipTurnRight() functions.\n"
+    printf("\tTurnLeftRight.c - Use mipTurnLeft & mipTurnRight() functions.\n"
            "\tTurn 180 degrees to left and then 180 degrees to right.\n");
 
     // Connect to first MiP robot discovered.
@@ -1019,7 +1019,7 @@ void robotMain(void)
     int   result = -1;
     MiP*  pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipTurnLeft & mipTurnRight() functions.\n"
+    printf("\tTurnLeftRight.c - Use mipTurnLeft & mipTurnRight() functions.\n"
            "\tTurn 180 degrees to left and then 180 degrees to right.\n");
 
     // Connect to first MiP robot discovered.
@@ -1057,7 +1057,7 @@ void robotMain(void)
     int   result = -1;
     MiP*  pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipDriveForward() & mipDriveBackward() functions.\n"
+    printf("\tDriveForwardBackward.c - Use mipDriveForward() & mipDriveBackward() functions.\n"
            "\tDrive ahead and back, 1 second in each direction.\n");
 
     // Connect to first MiP robot discovered.
@@ -1095,7 +1095,7 @@ void robotMain(void)
     int   result = -1;
     MiP*  pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipDriveForward() & mipDriveBackward() functions.\n"
+    printf("\tDriveForwardBackward.c - Use mipDriveForward() & mipDriveBackward() functions.\n"
            "\tDrive ahead and back, 1 second in each direction.\n");
 
     // Connect to first MiP robot discovered.
@@ -1129,7 +1129,7 @@ void robotMain(void)
     int   result = -1;
     MiP*  pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipStop() function.\n"
+    printf("\tStop.c - Use mipStop() function.\n"
            "\tInterrupt a 360 degree turn with mipStop().\n");
 
     // Connect to first MiP robot discovered.
@@ -1164,7 +1164,7 @@ void robotMain(void)
     int   result = -1;
     MiP*  pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipFallDown().\n"
+    printf("\tFallDown.c - Use mipFallDown().\n"
            "\tFall forward.\n");
 
     // Connect to first MiP robot discovered.
@@ -1201,7 +1201,7 @@ void robotMain(void)
     int   result = -1;
     MiP*  pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipGetUp().\n"
+    printf("\tGetUp.c - Use mipGetUp().\n"
            "\tAttempt to get up from a front fall.\n");
 
     // Connect to first MiP robot discovered.
@@ -1375,7 +1375,7 @@ void robotMain(void)
     int     result = -1;
     MiP*    pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipPlaySound().\n");
+    printf("\tPlaySound.c - Use mipPlaySound().\n");
 
     // Connect to first MiP robot discovered.
     result = mipConnectToRobot(pMiP, NULL);
@@ -1422,7 +1422,7 @@ void robotMain(void)
     uint8_t volume = 0;
     MiP*    pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipSet/GetVolume().\n"
+    printf("\tVolume.c - Use mipSet/GetVolume().\n"
            "\tSet volume level to 1 and read out afterwards.\n");
 
     // Connect to first MiP robot discovered.
@@ -1461,7 +1461,7 @@ void robotMain(void)
     uint8_t volume = 0;
     MiP*    pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipSet/GetVolume().\n"
+    printf("\tVolume.c - Use mipSet/GetVolume().\n"
            "\tSet volume level to 1 and read out afterwards.\n");
 
     // Connect to first MiP robot discovered.
@@ -1504,7 +1504,7 @@ void robotMain(void)
     int     result = -1;
     MiP*    pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipReadOdometer() and mipResetOdometer.\n"
+    printf("\tOdometer.c - Use mipReadOdometer() and mipResetOdometer.\n"
            "\tRead out current odometer reading and reset.\n");
 
     // Connect to first MiP robot discovered.
@@ -1544,7 +1544,7 @@ void robotMain(void)
     int     result = -1;
     MiP*    pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipReadOdometer() and mipResetOdometer.\n"
+    printf("\tOdometer.c - Use mipReadOdometer() and mipResetOdometer.\n"
            "\tRead out current odometer reading and reset.\n");
 
     // Connect to first MiP robot discovered.
@@ -1588,7 +1588,7 @@ void robotMain(void)
     int     result = -1;
     MiP*    pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipGetStatus() and mipGetLatestStatusNotification().\n");
+    printf("\tStatus.c - Use mipGetStatus() and mipGetLatestStatusNotification().\n");
 
     // Connect to first MiP robot discovered.
     result = mipConnectToRobot(pMiP, NULL);
@@ -1640,7 +1640,7 @@ void robotMain(void)
     int                    result = -1;
     MiP*                   pMiP = mipInit(NULL);
 
-    printf("\tExample - Use weight update functions.\n");
+    printf("\tWeight.c - Use weight update functions.\n");
 
     // Connect to first MiP robot discovered.
     result = mipConnectToRobot(pMiP, NULL);
@@ -1685,7 +1685,7 @@ void robotMain(void)
     int                    result = -1;
     MiP*                   pMiP = mipInit(NULL);
 
-    printf("\tExample - Use clap related functions.\n");
+    printf("\tClap.c - Use clap related functions.\n");
 
     // Connect to first MiP robot discovered.
     result = mipConnectToRobot(pMiP, NULL);
@@ -1747,7 +1747,7 @@ void robotMain(void)
     int                    result = -1;
     MiP*                   pMiP = mipInit(NULL);
 
-    printf("\tExample - Use clap related functions.\n");
+    printf("\tClap.c - Use clap related functions.\n");
 
     // Connect to first MiP robot discovered.
     result = mipConnectToRobot(pMiP, NULL);
@@ -1810,7 +1810,7 @@ void robotMain(void)
     int                    result = -1;
     MiP*                   pMiP = mipInit(NULL);
 
-    printf("\tExample - Use clap related functions.\n");
+    printf("\tClap.c - Use clap related functions.\n");
 
     // Connect to first MiP robot discovered.
     result = mipConnectToRobot(pMiP, NULL);
@@ -1881,7 +1881,7 @@ void robotMain(void)
     MiPRadarNotification radar = {0, MIP_RADAR_NONE};
     MiP*                 pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipGetLatestRadarNotification() function.\n"
+    printf("\tRadar.c - Use mipGetLatestRadarNotification() function.\n"
            "\tProgram should end once you place your handle <10cm from MiP's face.\n");
 
     // Connect to first MiP robot discovered.
@@ -1937,7 +1937,7 @@ void robotMain(void)
     MiPGestureNotification gesture = {0, 0};
     MiP*                   pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipGetLatestGestureNotification() function.\n"
+    printf("\tGesture.c - Use mipGetLatestGestureNotification() function.\n"
            "\tSwipe your hand in front of MiP to create gesture.\n");
 
     // Connect to first MiP robot discovered.
@@ -1985,7 +1985,7 @@ void robotMain(void)
     int     result = -1;
     MiP*    pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipGetStatus() and mipGetLatestStatusNotification().\n");
+    printf("\tStatus.c - Use mipGetStatus() and mipGetLatestStatusNotification().\n");
 
     // Connect to first MiP robot discovered.
     result = mipConnectToRobot(pMiP, NULL);
@@ -2032,7 +2032,7 @@ void robotMain(void)
     int                    result = -1;
     MiP*                   pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipGetLatestShakeNotification() function.\n");
+    printf("\tShake.c - Use mipGetLatestShakeNotification() function.\n");
 
     // Connect to first MiP robot discovered.
     result = mipConnectToRobot(pMiP, NULL);
@@ -2076,7 +2076,7 @@ void robotMain(void)
     int                    result = -1;
     MiP*                   pMiP = mipInit(NULL);
 
-    printf("\tExample - Use weight update functions.\n");
+    printf("\tWeight.c - Use weight update functions.\n");
 
     // Connect to first MiP robot discovered.
     result = mipConnectToRobot(pMiP, NULL);
@@ -2121,7 +2121,7 @@ void robotMain(void)
     int                    result = -1;
     MiP*                   pMiP = mipInit(NULL);
 
-    printf("\tExample - Use clap related functions.\n");
+    printf("\tClap.c - Use clap related functions.\n");
 
     // Connect to first MiP robot discovered.
     result = mipConnectToRobot(pMiP, NULL);
@@ -2187,7 +2187,7 @@ void robotMain(void)
     MiPHardwareInfo    hardwareInfo;
     MiP*               pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipGetSoftwareVersion() & mipGetHardwareInfo() functions.\n");
+    printf("\tGetSoftwareHardwareVersion.c - Use mipGetSoftwareVersion() & mipGetHardwareInfo() functions.\n");
 
     // Connect to first MiP robot discovered.
     result = mipConnectToRobot(pMiP, NULL);
@@ -2236,7 +2236,7 @@ void robotMain(void)
     MiPHardwareInfo    hardwareInfo;
     MiP*               pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipGetSoftwareVersion() & mipGetHardwareInfo() functions.\n");
+    printf("\tGetSoftwareHardwareVersion.c - Use mipGetSoftwareVersion() & mipGetHardwareInfo() functions.\n");
 
     // Connect to first MiP robot discovered.
     result = mipConnectToRobot(pMiP, NULL);
@@ -2285,7 +2285,7 @@ void robotMain(void)
     uint8_t response[MIP_RESPONSE_MAX_LEN];
     MiP*    pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipRaw*() functions.\n"
+    printf("\tRawSendReceive.c - Use mipRaw*() functions.\n"
            "\tShould set chest LED to purple and display MiP firmware revision\n");
 
     // Connect to first MiP robot discovered.
@@ -2345,7 +2345,7 @@ void robotMain(void)
     uint8_t response[MIP_RESPONSE_MAX_LEN];
     MiP*    pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipRaw*() functions.\n"
+    printf("\tRawSendReceive.c - Use mipRaw*() functions.\n"
            "\tShould set chest LED to purple and display MiP firmware revision\n");
 
     // Connect to first MiP robot discovered.
@@ -2403,7 +2403,7 @@ void robotMain(void)
     uint8_t response[MIP_RESPONSE_MAX_LEN];
     MiP*    pMiP = mipInit(NULL);
 
-    printf("\tExample - Use mipRawReceiveNotification() functions.\n"
+    printf("\tRawReceiveNotification.c - Use mipRawReceiveNotification() functions.\n"
            "\tIn less than half a minute, a notification should be displayed.\n");
 
     // Connect to first MiP robot discovered.
