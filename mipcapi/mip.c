@@ -14,7 +14,6 @@
 */
 /* Implementation of MiP C API. */
 #include <assert.h>
-#include <mach/mach_time.h>
 #include <stdio.h> // UNDONE: Just here for some temporary debug printf().
 #include <stdlib.h>
 #include "mip.h"
@@ -70,7 +69,6 @@
 struct MiP
 {
     MiPTransport*             pTransport;
-    mach_timebase_info_data_t machTimebaseInfo;
     MiPRadarNotification      lastRadar;
     MiPGestureNotification    lastGesture;
     MiPStatus                 lastStatus;
@@ -83,7 +81,6 @@ struct MiP
 // Forward Function Declarations.
 static int isValidHeadLED(MiPHeadLED led);
 static int parseStatus(MiP* pMiP, MiPStatus* pStatus, const uint8_t* pResponse, size_t responseLength);
-static uint32_t milliseconds(MiP* pMiP);
 static int parseWeight(MiP* pMiP, MiPWeight* pWeight, const uint8_t* pResponse, size_t responseLength);
 static void readNotifications(MiP* pMiP);
 
@@ -98,7 +95,6 @@ MiP* mipInit(const char* pInitOptions)
     pMiP->pTransport = mipTransportInit(pInitOptions);
     if (!pMiP->pTransport)
         goto Error;
-    mach_timebase_info(&pMiP->machTimebaseInfo);
 
     return pMiP;
 
@@ -573,18 +569,10 @@ static int parseStatus(MiP* pMiP, MiPStatus* pStatus, const uint8_t* pResponse, 
     }
 
     // Convert battery integer value to floating point voltage value.
-    pStatus->millisec = milliseconds(pMiP);
+    pStatus->millisec = mipTransportGetMilliseconds(pMiP->pTransport);
     pStatus->battery = (float)(((pResponse[1] - 0x4D) / (float)(0x7C - 0x4D)) * (6.4f - 4.0f)) + 4.0f;
     pStatus->position = pResponse[2];
     return MIP_ERROR_NONE;
-}
-
-static uint32_t milliseconds(MiP* pMiP)
-{
-    static const uint64_t nanoPerMilli = 1000000;
-
-    return (uint32_t)((mach_absolute_time() * pMiP->machTimebaseInfo.numer) /
-                      (nanoPerMilli * pMiP->machTimebaseInfo.denom));
 }
 
 int mipGetWeight(MiP* pMiP, MiPWeight* pWeight)
@@ -611,7 +599,7 @@ static int parseWeight(MiP* pMiP, MiPWeight* pWeight, const uint8_t* pResponse, 
         return MIP_ERROR_BAD_RESPONSE;
     }
 
-    pWeight->millisec = milliseconds(pMiP);
+    pWeight->millisec = mipTransportGetMilliseconds(pMiP->pTransport);
     pWeight->weight = pResponse[1];
     return MIP_ERROR_NONE;
 }
@@ -698,7 +686,7 @@ static void readNotifications(MiP* pMiP)
         case MIP_CMD_GET_RADAR_RESPONSE:
             if (responseLength == 2)
             {
-                pMiP->lastRadar.millisec = milliseconds(pMiP);
+                pMiP->lastRadar.millisec = mipTransportGetMilliseconds(pMiP->pTransport);
                 pMiP->lastRadar.radar = response[1];
                 pMiP->flags |= MIP_FLAG_RADAR_VALID;
             }
@@ -706,7 +694,7 @@ static void readNotifications(MiP* pMiP)
         case MIP_CMD_GET_GESTURE_RESPONSE:
             if (responseLength == 2)
             {
-                pMiP->lastGesture.millisec = milliseconds(pMiP);
+                pMiP->lastGesture.millisec = mipTransportGetMilliseconds(pMiP->pTransport);
                 pMiP->lastGesture.gesture = response[1];
                 pMiP->flags |= MIP_FLAG_GESTURE_VALID;
             }
@@ -730,7 +718,7 @@ static void readNotifications(MiP* pMiP)
         case MIP_CMD_CLAP_RESPONSE:
             if (responseLength == 2)
             {
-                pMiP->lastClap.millisec = milliseconds(pMiP);
+                pMiP->lastClap.millisec = mipTransportGetMilliseconds(pMiP->pTransport);
                 pMiP->lastClap.count = response[1];
                 pMiP->flags |= MIP_FLAG_CLAP_VALID;
             }

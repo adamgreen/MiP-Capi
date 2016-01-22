@@ -145,4 +145,11 @@ int mipTransportGetOutOfBandResponse(MiPTransport* pTransport,
                                      size_t responseBufferSize,
                                      size_t* pResponseLength);
 
+// Get the number of milliseconds the computer has been up and running using transport / platform specific
+// functionality.
+//
+//   pTransport: An object that was previously returned from the mipTransportInit() call.
+//   Returns: Millisecond count.
+uint32_t mipTransportGetMilliseconds(MiPTransport* pTransport);
+
 #endif // MIP_TRANSPORT_H_

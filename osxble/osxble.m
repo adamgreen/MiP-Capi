@@ -20,6 +20,7 @@
 #import <IOBluetooth/IOBluetooth.h>
 #import <pthread.h>
 #import <sys/time.h>
+#import <mach/mach_time.h>
 #import "mip.h"
 #import "mip-transport.h"
 #import "osxble.h"
@@ -868,7 +869,8 @@ static void* robotThread(void* pArg)
 
 struct MiPTransport
 {
-    MiPRequestResponse* lastRequest; // Remember last request here that requires a response.
+    MiPRequestResponse*       lastRequest; // Remember last request here that requires a response.
+    mach_timebase_info_data_t machTimebaseInfo;
 };
 
 
@@ -876,6 +878,7 @@ struct MiPTransport
 MiPTransport* mipTransportInit(const char* pInitOptions)
 {
     MiPTransport* pTransport = calloc(1, sizeof(*pTransport));
+    mach_timebase_info(&pTransport->machTimebaseInfo);
     return pTransport;
 }
 
@@ -999,4 +1002,12 @@ int mipTransportIsResponseAvailable(MiPTransport* pTransport)
 int mipTransportGetOutOfBandResponse(MiPTransport* pTransport, uint8_t* pResponseBuffer, size_t responseBufferSize, size_t* pResponseLength)
 {
     return [g_appDelegate popOobResponse:pResponseBuffer size:responseBufferSize actualLength:pResponseLength];
+}
+
+uint32_t mipTransportGetMilliseconds(MiPTransport* pTransport)
+{
+    static const uint64_t nanoPerMilli = 1000000;
+
+    return (uint32_t)((mach_absolute_time() * pTransport->machTimebaseInfo.numer) /
+                      (nanoPerMilli * pTransport->machTimebaseInfo.denom));
 }
