@@ -11,14 +11,34 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+	Implementation of MiP C API. 
+
+	Modified to eliminate OSX time functions as a step towards a linux port.
+	Used OS independant code in getrealtime.[ch] modules
+	Tested on OSX only so far
+	
 */
-/* Implementation of MiP C API. */
 #include <assert.h>
-#include <mach/mach_time.h>
 #include <stdio.h> // UNDONE: Just here for some temporary debug printf().
 #include <stdlib.h>
 #include "mip.h"
 #include "mip-transport.h"
+#include "getrealtime.h"
+
+#if defined(__unix__) || defined(__unix) || defined(unix) || (defined(__APPLE__) && defined(__MACH__))
+#include <unistd.h>	/* POSIX flags */
+#include <time.h>	/* clock_gettime(), time() */
+#include <sys/time.h>	/* gethrtime(), gettimeofday() */
+
+#if defined(__MACH__) && defined(__APPLE__)
+#include <mach/mach.h>
+#include <mach/mach_time.h>
+#endif
+#else
+#error "Unable to define getRealTime( ) for an unknown OS."
+#endif
+
 
 
 // MiP Protocol Commands.
@@ -70,7 +90,8 @@
 struct MiP
 {
     MiPTransport*             pTransport;
-    mach_timebase_info_data_t machTimebaseInfo;
+//    mach_timebase_info_data_t machTimebaseInfo;
+    double                    lastTime;
     MiPRadarNotification      lastRadar;
     MiPGestureNotification    lastGesture;
     MiPStatus                 lastStatus;
@@ -78,7 +99,6 @@ struct MiP
     MiPClap                   lastClap;
     uint32_t                  flags;
 };
-
 
 // Forward Function Declarations.
 static int isValidHeadLED(MiPHeadLED led);
@@ -98,7 +118,7 @@ MiP* mipInit(const char* pInitOptions)
     pMiP->pTransport = mipTransportInit(pInitOptions);
     if (!pMiP->pTransport)
         goto Error;
-    mach_timebase_info(&pMiP->machTimebaseInfo);
+    //mach_timebase_info(&pMiP->machTimebaseInfo);
 
     return pMiP;
 
@@ -581,10 +601,15 @@ static int parseStatus(MiP* pMiP, MiPStatus* pStatus, const uint8_t* pResponse, 
 
 static uint32_t milliseconds(MiP* pMiP)
 {
+#ifdef ORIGINAL_CODE 
     static const uint64_t nanoPerMilli = 1000000;
 
     return (uint32_t)((mach_absolute_time() * pMiP->machTimebaseInfo.numer) /
                       (nanoPerMilli * pMiP->machTimebaseInfo.denom));
+#else
+    return getRealMillisec();
+#endif
+
 }
 
 int mipGetWeight(MiP* pMiP, MiPWeight* pWeight)
