@@ -484,7 +484,9 @@ Used to enable gesture or radar mode.
 * When the mode is set to **MIP_RADAR**, the MiP will start sending radar notifications.  These notifications can be
   queried via mipGetLatestRadarNotification().
 * These gesture/radar notifications will be suppressed while the MiP is executing long running commands.  Shorter
-  commands like mipContinuousDrive() do allow the MiP to send the radar notifications in a timely fashion.
+  commands like mipContinuousDrive() do allow the MiP to send the notifications in a timely fashion.
+* These gesture/radar notifications will only be sent when the MiP is actively balancing.  They will be suppressed if
+  the MiP is laying back on its kickstand for example.
 
 **Example:**
 {{{
@@ -1872,6 +1874,10 @@ Retrieves the most recent radar notification from the MiP.
 * The **radar** field in the returned MiPRadarNotification structure will contain one of these
   values: **MIP_RADAR_NONE** (the MiP detects nothing in front of it), **MIP_RADAR_10CM_30CM** (the MiP detects
   something between 10cm and 30cm), and **MIP_RADAR_0CM_10CM** (the MiP detects something closer than 10cm).
+* These radar notifications will be suppressed while the MiP is executing long running commands.  Shorter commands like
+  mipContinuousDrive() do allow the MiP to send the notifications in a timely fashion.
+* These radar notifications will only be sent when the MiP is actively balancing.  They will be suppressed if the MiP is
+  laying back on its kickstand for example.
 
 **Example:**
 {{{
@@ -1920,6 +1926,10 @@ Retrieves the most recent gesture notification from the MiP.
   notification is the same as the last one retrieved since newer notifications will contain a different value in this
   field.
 * The **gesture** field in the returned MiPGestureNotification structure will contain one of the values from the following table.
+* These gesture notifications will be suppressed while the MiP is executing long running commands.  Shorter commands
+  like mipContinuousDrive() do allow the MiP to send the notifications in a timely fashion.
+* These gesture notifications will only be sent when the MiP is actively balancing.  They will be suppressed if the MiP
+  is laying back on its kickstand for example.
 
 | MIP_GESTURE_LEFT |
 | MIP_GESTURE_RIGHT |
