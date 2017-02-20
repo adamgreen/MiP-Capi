@@ -17,7 +17,7 @@
    code is to be used with console applications on OS X.
 */
 #import <Cocoa/Cocoa.h>
-#import <IOBluetooth/IOBluetooth.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 #import <pthread.h>
 #import <sys/time.h>
 #import <mach/mach_time.h>
