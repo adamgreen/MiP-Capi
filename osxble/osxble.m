@@ -316,6 +316,8 @@ Error:
     int                 error;
     int32_t             characteristicsToFind;
     BOOL                autoConnect;
+    BOOL                isBlePowerOn;
+    BOOL                scanOnBlePowerOn;
 
     pthread_mutex_t     connectMutex;
     pthread_cond_t      connectCondition;
@@ -500,7 +502,16 @@ Error:
 // Request CBCentralManager to scan for WowWee MiP robots via one of the two services that it broadcasts.
 - (void) startScan
 {
-    [manager scanForPeripheralsWithServices:[NSArray arrayWithObject:[CBUUID UUIDWithString:@MIP_BROADCAST_SERVICE1]] options:nil];
+    if (!isBlePowerOn)
+    {
+        // Postpone the scan start until later when BLE power on is detected.
+        scanOnBlePowerOn = TRUE;
+        return;
+    }
+    else
+    {
+        [manager scanForPeripheralsWithServices:[NSArray arrayWithObject:[CBUUID UUIDWithString:@MIP_BROADCAST_SERVICE1]] options:nil];
+    }
 }
 
 // Invoked when the central discovers MiP robots while scanning.
@@ -820,17 +831,25 @@ static int parseHexDigit(uint8_t digit)
     // Display an error to user if there is no BLE hardware and then force an exit.
     switch ([manager state])
     {
-        case CBCentralManagerStateUnsupported:
+        case CBManagerStateUnsupported:
             state = @"The platform/hardware doesn't support Bluetooth Low Energy.";
             break;
-        case CBCentralManagerStateUnauthorized:
+        case CBManagerStateUnauthorized:
             state = @"The app is not authorized to use Bluetooth Low Energy.";
             break;
-        case CBCentralManagerStatePoweredOff:
+        case CBManagerStatePoweredOff:
+            isBlePowerOn = FALSE;
             state = @"Bluetooth is currently powered off.";
             break;
-        case CBCentralManagerStatePoweredOn:
-        case CBCentralManagerStateUnknown:
+        case CBManagerStatePoweredOn:
+            isBlePowerOn = TRUE;
+            if (scanOnBlePowerOn)
+            {
+                scanOnBlePowerOn = FALSE;
+                [self startScan];
+            }
+            return;
+        case CBManagerStateUnknown:
         default:
             return;
     }
