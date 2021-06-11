@@ -1,3 +1,6 @@
+=Archived - June 10th, 2021
+This project is no longer under active development.
+
 =MiP C API
 The **MiP C API** was created to give a C language abstraction for the operations supported by the
 [[https://github.com/WowWeeLabs/MiP-BLE-Protocol | WowWee MiP Mobile self-balancing Inverted Pendulum  robot protocol]].
@@ -435,7 +438,7 @@ Stops the process of discovering MiP robots to which a connection can be made.
 **Notes:**
 * The discovery process is only used with BLE transports to find nearby MiP robots.  If connecting directly to the MiP
   via the UART transport then discovery isn't necessary.
-* The discovery process is started with a call to mipStartRobotDiscovery() and stops when this function is called.  
+* The discovery process is started with a call to mipStartRobotDiscovery() and stops when this function is called.
 * MiP robots which were found between these two calls can be listed through the use of the mipGetDiscoveredRobotCount()
   and mipGetDiscoveredRobotName() functions.
 
